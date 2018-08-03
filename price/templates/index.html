@@ -2,24 +2,30 @@
 
 {% block content %}
    
-  <div class="row">
-        <div class="col-md-8"><b>Currency</b></div>
-        <div class="col-md-4"><b>Price(USD)</b></div>
-        
-      </div>
+  <table  width ="400">
+  <table align = "center">
+    <thead>
+      <tr>
+        <th>Currency</th>
+        <th>Price(USD)</th>
+      </tr>
+    </thead>
+        <tbody>
+
   
   {% for keys,value in data.items %}
       
-      <div class="row">
-        <div class="col-md-8">{{value.name}}</div>
-        <div class="col-md-4">${{value.quotes.USD.price}}</div>
+      <tr>
+        <td>{{value.name}}</td>
+        <td>${{value.quotes.USD.price}}</td>
         
-      </div>
-
+      </tr> 
       
   
        
   {% endfor %}
-  
+   </tbody>
+  </table>
+      </div>
   
 {% endblock %}
